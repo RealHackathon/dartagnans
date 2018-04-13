@@ -13,7 +13,9 @@ class CocktailController extends Controller
      */
     public function index(Request $request)
     {
-        dump($request);die();
+
+
+
         return $this->render('cocktail/index.html.twig');
     }
 }
