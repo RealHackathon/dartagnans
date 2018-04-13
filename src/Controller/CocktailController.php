@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class CocktailController extends Controller
 {
     /**
-     * @Route("/cocktail", name="cocktail")
+     * @Route("/", name="cocktail")
      */
     public function index(Request $request)
     {
