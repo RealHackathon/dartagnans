@@ -5,16 +5,27 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/mojito2.jpg",
     "forPeople": "1",
-    "ingredient1": "rhum blanc",
-    "ingredient2": "jus de citron verts",
-    "ingredient3": "feuilles de menthe",
-    "ingredient4": "eau gazeuse",
-    "ingredient5": "sirop de sucre de canne",
-    "measure1": "6 cl",
-    "measure2": "3 cl",
-    "measure3": "7",
-    "measure4": "",
-    "measure5": "2 cl"
+    "ingredients": [
+      "rhum blanc",
+      "jus de citrons verts",
+      "feuilles de menthe",
+      "eau gazeuse",
+      "sirop de sucre de canne"
+    ],
+    "measures": [
+      "6",
+      "3",
+      "7",
+      "",
+      "2"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "",
+      "",
+      "cl"
+    ]
   },
 
   {
@@ -23,14 +34,24 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/pina-colada-104.jpg",
     "forPeople": "1",
-    "ingredient1": "rhum blanc",
-    "ingredient2": "rhum ambré",
-    "ingredient3": "jus d'ananas",
-    "ingredient4": "lait de coco",
-    "measure1": "4 cl",
-    "measure2": "2 cl",
-    "measure3": "12 cl",
-    "measure4": "4 cl"
+    "ingredients": [
+      "rhum blanc",
+      "rhum ambré",
+      "jus d'ananas",
+      "lait de coco"
+    ],
+    "measures": [
+      "4",
+      "2",
+      "12",
+      "4"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl",
+      "cl"
+    ]
   },
 
   {
@@ -39,12 +60,21 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/margarita2.jpg",
     "forPeople": "1",
-    "ingredient1": "tequila",
-    "ingredient2": "triple sec",
-    "ingredient3": "jus de citrons verts",
-    "measure1": "5 cl",
-    "measure2": "3 cl",
-    "measure3": "2 cl"
+    "ingredients": [
+      "tequila",
+      "triple sec",
+      "jus de citrons verts"
+    ],
+    "measures": [
+      "5",
+      "3",
+      "2"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl"
+    ]
   },
 
   {
@@ -53,16 +83,27 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/sexonee.jpg",
     "forPeople": "1",
-    "ingredient1": "vodka",
-    "ingredient2": "sirop de melon",
-    "ingredient3": "chambord",
-    "ingredient4": "jus d'ananas",
-    "ingredient5": "jus de cranberry",
-    "measure1": "3 cl",
-    "measure2": "2 cl",
-    "measure3": "2 cl",
-    "measure4": "5 cl",
-    "measure5": "6 cl"
+    "ingredients": [
+      "vodka",
+      "sirop de melon",
+      "chambord",
+      "jus d'ananas",
+      "jus de cranberry"
+    ],
+    "measures": [
+      "3",
+      "2",
+      "2",
+      "5",
+      "6"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl",
+      "cl",
+      "cl"
+    ]
   },
 
   {
@@ -71,14 +112,24 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/soupe-de-champagne-2171.jpg",
     "forPeople": "6",
-    "ingredient1": "triple sec",
-    "ingredient2": "champagne",
-    "ingredient3": "jus de citrons verts",
-    "ingredient4": "sirop de sucre de canne",
-    "measure1": "1 louche",
-    "measure2": "1 bouteille",
-    "measure3": "1 louche",
-    "measure4": "1 louche"
+    "ingredients": [
+      "triple sec",
+      "champagne",
+      "jus de citrons verts",
+      "sirop de sucre de canne"
+    ],
+    "measures": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "units": [
+      "louche",
+      "bouteille",
+      "louche",
+      "louche"
+    ]
   },
 
   {
@@ -87,12 +138,21 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/caipirinha3.jpg",
     "forPeople": "1",
-    "ingredient1": "cachaça",
-    "ingredient2": "citron vert",
-    "ingredient3": "cuillère à soupe de sucre",
-    "measure1": "6 cl",
-    "measure2": "1",
-    "measure3": "1"
+    "ingredients": [
+      "cachaça",
+      "citron vert",
+      "sucre"
+    ],
+    "measures": [
+      "6",
+      "1",
+      "1"
+    ],
+    "units": [
+      "cl",
+      "",
+      "cuillère à soupe"
+    ]
   },
 
   {
@@ -101,14 +161,24 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/cosmopolitan.jpg",
     "forPeople": "1",
-    "ingredient1": "vodka",
-    "ingredient2": "triple sec",
-    "ingredient3": "jus de cranberry",
-    "ingredient4": "jus de citrons verts",
-    "measure1": "4 cl",
-    "measure2": "2 cl",
-    "measure3": "2 cl",
-    "measure4": "1 cl"
+    "ingredients": [
+      "vodka",
+      "triple sec",
+      "jus de cranberry",
+      "jus de citrons verts"
+    ],
+    "measures": [
+      "4",
+      "2",
+      "2",
+      "1"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl",
+      "cl"
+    ]
   },
 
   {
@@ -117,12 +187,21 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/blue-lagoon-50.jpg",
     "forPeople": "1",
-    "ingredient1": "vodka",
-    "ingredient2": "curaçao bleu",
-    "ingredient3": "jus de citrons",
-    "measure1": "4 cl",
-    "measure2": "3 cl",
-    "measure3": "2 cl"
+    "ingredients": [
+      "vodka",
+      "curaçao bleu",
+      "jus de citrons"
+    ],
+    "measures": [
+      "4",
+      "3",
+      "2"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl"
+    ]
   },
 
   {
@@ -131,12 +210,21 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/tequila-sunrise-52.jpg",
     "forPeople": "1",
-    "ingredient1": "tequila",
-    "ingredient2": "jus d'oranges",
-    "ingredient3": "sirop de grenadine",
-    "measure1": "6 cl",
-    "measure2": "12 cl",
-    "measure3": "2 cl"
+    "ingredients": [
+      "tequila",
+      "jus d'oranges",
+      "sirop de grenadine"
+    ],
+    "measures": [
+      "6",
+      "12",
+      "2"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl"
+    ]
   },
 
   {
@@ -145,20 +233,33 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/punc.jpg",
     "forPeople": "10",
-    "ingredient1": "rhum blanc",
-    "ingredient2": "sirop de sucre de canne",
-    "ingredient3": "jus d'oranges",
-    "ingredient4": "jus d'ananas",
-    "ingredient5": "jus de pamplemousses",
-    "ingredient6": "cannelle",
-    "ingredient7": "thé",
-    "measure1": "100 cl",
-    "measure2": "50 cl",
-    "measure3": "100 cl",
-    "measure4": "100 cl",
-    "measure5": "100 cl",
-    "measure6": "1 bâton",
-    "measure7": "3 sachets"
+    "ingredients": [
+      "rhum blanc",
+      "sirop de sucre de canne",
+      "jus d'oranges",
+      "jus d'ananas",
+      "jus de pamplemousses",
+      "cannelle",
+      "thé"
+    ],
+    "measures": [
+      "100",
+      "50",
+      "100",
+      "100",
+      "100",
+      "1",
+      "3"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl",
+      "cl",
+      "cl",
+      "bâton",
+      "sachets"
+    ]
   },
 
   {
@@ -167,22 +268,35 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/bloody_mary.jpg",
     "forPeople": "1",
-    "ingredient1": "vodka",
-    "ingredient2": "jus de tomates",
-    "ingredient3": "jus de citrons",
-    "ingredient4": "sauce worcestershire",
-    "ingredient5": "tabasco",
-    "ingredient6": "sel de céleri",
-    "ingredient7": "sel",
-    "ingredient8": "poivre",
-    "measure1": "4 cl",
-    "measure2": "12 cl",
-    "measure3": "0.5 cl",
-    "measure4": "0.5 cl",
-    "measure5": "2 gouttes",
-    "measure6": "",
-    "measure7": "",
-    "measure8": ""
+    "ingredients": [
+      "vodka",
+      "jus de tomates",
+      "jus de citrons",
+      "sauce worcestershire",
+      "tabasco",
+      "sel de céleri",
+      "sel",
+      "poivre"
+    ],
+    "measures": [
+      "4 cl",
+      "12 cl",
+      "0.5 cl",
+      "0.5 cl",
+      "2 gouttes",
+      "",
+      "",
+      "
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl",
+      "cl",
+      "gouttes",
+      "",
+      ""
+    ]
   },
 
   {
@@ -191,20 +305,33 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/punchexoti.jpg",
     "forPeople": "20",
-    "ingredient1": "jus d'oranges",
-    "ingredient2": "sirop de sucre de canne",
-    "ingredient3": "rhum blanc",
-    "ingredient4": "jus de pamplemousses",
-    "ingredient5": "jus de fruits exotiques",
-    "ingredient6": "gousses de vanille",
-    "ingredient7": "rhum ambré",
-    "measure1": "4 l",
-    "measure2": "1 verre",
-    "measure3": "100 cl",
-    "measure4": "100 cl",
-    "measure5": "100 cl",
-    "measure6": "2",
-    "measure7": "40 cl"
+    "ingredients": [
+      "jus d'oranges",
+      "sirop de sucre de canne",
+      "rhum blanc",
+      "jus de pamplemousses",
+      "jus de fruits exotiques",
+      "vanille",
+      "rhum ambré"
+    ],
+    "measures": [
+      "4",
+      "1",
+      "100",
+      "100",
+      "100",
+      "gousses",
+      "40"
+    ],
+    "units": [
+      "l",
+      "verre",
+      "cl",
+      "cl",
+      "cl",
+      "gousses",
+      "cl"
+    ]
   },
 
   {
@@ -213,11 +340,20 @@
     "alcoholic": "true",
     "thumbnail": "http://www.1001cocktails.com/images/cuba-libre-21.jpg",
     "forPeople": "1",
-    "ingredient1": "rhum cubain",
-    "ingredient2": "jus de citrons verts",
-    "ingredient3": "cola",
-    "measure1": "6 cl",
-    "measure2": "4 cl",
-    "measure3": "15 cl"
+    "ingredients": [
+      "rhum cubain",
+      "jus de citrons verts",
+      "cola"
+    ],
+    "measures": [
+      "6",
+      "4",
+      "15"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl"
+    ]
   }
 ]
