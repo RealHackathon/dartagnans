@@ -1,5 +1,5 @@
-{
-  "0": {
+[
+  {
     "id": "1",
     "name": "Mojito",
     "alcoholic": "true",
@@ -17,7 +17,7 @@
     "measure5": "2 cl"
   },
 
-  "1": {
+  {
     "id": "2",
     "name": "Pina Colada",
     "alcoholic": "true",
@@ -33,7 +33,7 @@
     "measure4": "4 cl"
   },
 
-  "2": {
+  {
     "id": "3",
     "name": "Margarita",
     "alcoholic": "true",
@@ -47,7 +47,7 @@
     "measure3": "2 cl"
   },
 
-  "3": {
+  {
     "id": "4",
     "name": "Sex on the beach",
     "alcoholic": "true",
@@ -65,7 +65,7 @@
     "measure5": "6 cl"
   },
 
-  "4": {
+  {
     "id": "5",
     "name": "Soupe de champagne",
     "alcoholic": "true",
@@ -81,7 +81,7 @@
     "measure4": "1 louche"
   },
 
-  "5": {
+  {
     "id": "6",
     "name": "Caipirinha",
     "alcoholic": "true",
@@ -95,7 +95,7 @@
     "measure3": "1"
   },
 
-  "6": {
+  {
     "id": "7",
     "name": "Cosmopolitan",
     "alcoholic": "true",
@@ -111,7 +111,7 @@
     "measure4": "1 cl"
   },
 
-  "7": {
+  {
     "id": "8",
     "name": "Blue Lagoon",
     "alcoholic": "true",
@@ -125,7 +125,7 @@
     "measure3": "2 cl"
   },
 
-  "8": {
+  {
     "id": "9",
     "name": "Tequila Sunrise",
     "alcoholic": "true",
@@ -139,7 +139,7 @@
     "measure3": "2 cl"
   },
 
-  "9": {
+  {
     "id": "10",
     "name": "Punch",
     "alcoholic": "true",
@@ -161,7 +161,7 @@
     "measure7": "3 sachets"
   },
 
-  "10": {
+  {
     "id": "11",
     "name": "Bloody Mary",
     "alcoholic": "true",
@@ -185,7 +185,7 @@
     "measure8": ""
   },
 
-  "11": {
+  {
     "id": "12",
     "name": "Punch exotique",
     "alcoholic": "true",
@@ -207,7 +207,7 @@
     "measure7": "40 cl"
   },
 
-  "12": {
+  {
     "id": "13",
     "name": "Cuba libre",
     "alcoholic": "true",
@@ -220,4 +220,4 @@
     "measure2": "4 cl",
     "measure3": "15 cl"
   }
-}
+]
