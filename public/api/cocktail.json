@@ -356,5 +356,179 @@
       "cl",
       "cl"
     ]
+  },
+
+  {
+    "id": "14",
+    "name": "Gin Fizz",
+    "alcoholic": "true",
+    "thumbnail": "http://www.1001cocktails.com/images/ginfizz4.jpg",
+    "forPeople": "1",
+    "ingredients": [
+      "gin",
+      "jus de citrons jaunes",
+      "sirop de sucre de canne",
+      "eau gazeuse"
+    ],
+    "measures": [
+      "6",
+      "4",
+      "2",
+      "12"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl",
+      "cl"
+    ]
+  },
+
+  {
+    "id": "15",
+    "name": "Gin Tonic",
+    "alcoholic": "true",
+    "thumbnail": "http://www.1001cocktails.com/images/gintonic.jpg",
+    "forPeople": "1",
+    "ingredients": [
+      "tonic (schweppes)",
+      "gin"
+    ],
+    "measures": [
+      "",
+      "3"
+    ],
+    "units": [
+      "",
+      "cl"
+    ]
+  },
+
+  {
+    "id": "16",
+    "name": "Whisky Highball",
+    "alcoholic": "true",
+    "thumbnail": "http://www.1001cocktails.com/images/whiskyhigh.jpg",
+    "forPeople": "1",
+    "ingredients": [
+      "whisky",
+      "tonic (schweppes)"
+    ],
+    "measures": [
+      "4",
+      ""
+    ],
+    "units": [
+      "cl",
+      ""
+    ]
+  },
+
+  {
+    "id": "17",
+    "name": "Mont blanc",
+    "alcoholic": "true",
+    "thumbnail": "http://www.1001cocktails.com/images/mont-blanc-1032.jpg",
+    "forPeople": "1",
+    "ingredients": [
+      "champagne",
+      "vodka",
+      "sorbet citron"
+    ],
+    "measures": [
+      "",
+      "1.5",
+      "2"
+    ],
+    "units": [
+      "",
+      "cl",
+      "boules"
+    ]
+  },
+
+  {
+    "id": "18",
+    "name": "Perfect Whiskey Sour",
+    "alcoholic": "true",
+    "thumbnail": "http://www.1001cocktails.com/images/perfect-whiskey-sour-5753.jpg",
+    "forPeople": "1",
+    "ingredients": [
+      "jus de citrons verts",
+      "sirop de sucre de canne",
+      "blanc d'oeufs",
+      "angostura bitters",
+      "whisky"
+    ],
+    "measures": [
+      "3",
+      "1.5",
+      "1.5",
+      "2",
+      "6"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl",
+      "cl",
+      "traits",
+      "cl"
+    ]
+  },
+
+  {
+    "id": "19",
+    "name": "Jacqueline",
+    "alcoholic": "true",
+    "thumbnail": "http://www.1001cocktails.com/images/jacqueline.jpg",
+    "forPeople": "1",
+    "ingredients": [
+      "vin blanc",
+      "limonade",
+      "sirop de grenadine"
+    ],
+    "measures": [
+      "7",
+      "2",
+      "1"
+    ],
+    "units": [
+      "cl",
+      "cl",
+      "cl"
+    ]
+  },
+
+  {
+    "id": "20",
+    "name": "Sangria",
+    "alcoholic": "true",
+    "thumbnail": "http://www.1001cocktails.com/images/sangriaa.jpg",
+    "forPeople": "4",
+    "ingredients": [
+      "fraises",
+      "citron",
+      "sucre",
+      "vin rouge",
+      "orange",
+      "cannelle"
+    ],
+    "measures": [
+      "8",
+      "1",
+      "2",
+      "40",
+      "1",
+      "1"
+    ],
+    "units": [
+      "",
+      "",
+      "cuillère à soupe",
+      "cl",
+      "",
+      "pincée"
+    ]
   }
 ]
