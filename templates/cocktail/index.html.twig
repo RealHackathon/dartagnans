@@ -11,6 +11,11 @@
                     <h4 class="card-title">Drinky Bot</h4>
                     <p class="card-text">
                         <div id="chatMessages">
+                            {% for userMessage in userMessages %}
+                                <div class="alert alert-warning text-right">
+                                    <p>{{ userMessage }}</p>
+                                </div>
+                            {% endfor %}
                             {% for chatMessage in chatMessages %}
                                 <div class="alert alert-primary">
                                     <p>{{ chatMessage }}</p>
@@ -41,10 +46,9 @@
         </div>
     </section>
 
-
-
-
-
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-warning" onclick="document.location.href='/reset'">Reset</button>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
