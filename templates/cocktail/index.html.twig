@@ -10,7 +10,13 @@
                 <div class="card-body">
                     <h4 class="card-title">Drinky Bot</h4>
                     <p class="card-text">
-                        Le bot te parle
+                        <div id="chatMessages">
+                            {% for chatMessage in chatMessages %}
+                                <div class="alert alert-primary">
+                                    <p>{{ chatMessage }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </p>
                 </div>
                 <div class="card-footer">
@@ -27,4 +33,8 @@
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/index.js') }}"></script>
 {% endblock %}

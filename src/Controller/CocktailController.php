@@ -58,6 +58,8 @@ class CocktailController extends Controller
             $session->set('ingredients', $ingredients);
             $chatMessages[] = "L'ingrédient suivant vous convient-il ?";
             $chatMessages[] = $ingredientSelected;
+            $chatMessages[] = "Cette ingrédient te plaît ?";
+
         } else {
 
         }
@@ -65,7 +67,7 @@ class CocktailController extends Controller
         return $this->render('cocktail/index.html.twig', [
             'cocktails' => $cocktails,
             'ingredients' => $ingredients,
-            'chatMessage' => $chatMessages,
+            'chatMessages' => $chatMessages,
         ]);
     }
 
