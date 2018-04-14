@@ -149,6 +149,7 @@ class CocktailController extends Controller
      */
     public function reset(Request $request, SessionInterface $session)
     {
+        $session->start();
         $session->invalidate();
         return $this->redirectToRoute("cocktail");
     }
