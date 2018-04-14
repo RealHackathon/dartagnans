@@ -13,12 +13,12 @@
                         <div id="chatMessages">
                             {% for userMessage in userMessages %}
                                 <div class="alert alert-warning text-right">
-                                    <p>{{ userMessage }}</p>
+                                    <p>{{ userMessage|capitalize }}</p>
                                 </div>
                             {% endfor %}
                             {% for chatMessage in chatMessages %}
                                 <div class="alert alert-primary">
-                                    <p>{{ chatMessage }}</p>
+                                    <p>{{ chatMessage|capitalize }}</p>
                                 </div>
                             {% endfor %}
                         </div>
