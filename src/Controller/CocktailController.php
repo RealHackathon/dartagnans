@@ -42,17 +42,26 @@ class CocktailController extends Controller
             $session->set('round', $round);
         }
 
-        $chats = [];
+        $chatMessages = [];
         if ($session->get('round') == 0) {
-            $chats[] = "Bonjour je suis Drinky.";
-            $chats[] = "Je vais vous proposer un coktail.";
+            //lancement de la conversation
+            $chatMessages[] = "Bonjour je suis Drinky.";
+            $chatMessages[] = "Je vais vous proposer un coktail.";
 
-            $chats[] = "Co";
+            $array = $this->selectOneIngredient($ingredients);
+            $ingredientSelected = $array[0];
+            $ingredients = $array[1];
+            $session->set('ingredients', $ingredients);
+            $chatMessages[] = "L'ingrédient suivant vous convient-il ?";
+            $chatMessages[] = $ingredientSelected;
+        } else {
+
         }
 
         return $this->render('cocktail/index.html.twig', [
             'cocktails' => $cocktails,
             'ingredients' => $ingredients,
+            'chatMessage' => $chatMessages,
         ]);
     }
 
