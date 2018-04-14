@@ -16,7 +16,9 @@ class CocktailController extends Controller
     public function index(Request $request, SessionInterface $session)
     {
 
+
         if (!isset($cocktails) || !isset($ingredients)) {
+
             $string = file_get_contents("../public/api/cocktail.json");
             $json = json_decode($string, true);
             $cocktails = [];
@@ -27,7 +29,7 @@ class CocktailController extends Controller
             $string = file_get_contents("../public/api/ingredient.json");
             $ingredients = json_decode($string, true);
 
-            $this->selectOneIngredient($ingredients); die();
+            $this->selectOneIngredient($ingredients);
 
             $session->set('coktails', $cocktails);
             $session->set('ingredients', $ingredients);
