@@ -7,22 +7,67 @@ use App\Form\BotType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CocktailController extends Controller
 {
     /**
      * @Route("/", name="cocktail")
      */
-    public function index(Request $request)
+    public function index(Request $request, SessionInterface $session)
     {
 
         $string = file_get_contents("../public/api/cocktail.json");
         $json = json_decode($string, true);
         $cocktails = [];
 
-        foreach ($json as $cocktail) {
-            $cocktails[] = new Cocktail($cocktail);
+        if (!isset($cocktails) || !isset($ingredients)) {
+
+            $string = file_get_contents("../public/api/cocktail.json");
+            $json = json_decode($string, true);
+            $cocktails = [];
+            foreach ($json as $cocktail) {
+                $cocktails[] = new Cocktail($cocktail);
+            }
+
+            $string = file_get_contents("../public/api/ingredient.json");
+            $ingredients = json_decode($string, true);
+
+            $this->selectOneIngredient($ingredients);
+
+            $session->set('coktails', $cocktails);
+            $session->set('ingredients', $ingredients);
+
+
+            $session->set('round', 0);
+
+        } else {
+            $cocktails = $session->get('coktails');
+            $ingredients = $session->get('ingredients');
+
+            $round = $session->get('round');
+            $round++;
+            $session->set('round', $round);
         }
+
+        $chatMessages = [];
+        if ($session->get('round') == 0) {
+            //lancement de la conversation
+            $chatMessages[] = "Bonjour je suis Drinky.";
+            $chatMessages[] = "Je vais vous proposer un coktail.";
+
+            $array = $this->selectOneIngredient($ingredients);
+            $ingredientSelected = $array[0];
+            $ingredients = $array[1];
+            $session->set('ingredients', $ingredients);
+            $chatMessages[] = "L'ingrédient suivant vous convient-il ?";
+            $chatMessages[] = $ingredientSelected;
+            $chatMessages[] = "Cette ingrédient te plaît ?";
+
+        } else {
+
+        }
+
 
         $form = $this->createForm(BotType::class);
         $form->handleRequest($request);
@@ -37,7 +82,36 @@ class CocktailController extends Controller
             return $this->redirectToRoute('task_success');
         }
 
-
-        return $this->render('cocktail/index.html.twig', ['form' => $form->createView()]);
+        return $this->render('cocktail/index.html.twig', [
+            'cocktails' => $cocktails,
+            'ingredients' => $ingredients,
+            'chatMessages' => $chatMessages,
+            'form'=>$form->createView()
+        ]);
     }
+
+    public function selectOneCocktail(int $id, array $coktails): Cocktail
+    {
+        foreach ($coktails as $coktail) {
+            if ($coktail->getId() == $id) {
+                return $coktail;
+            }
+        }
+    }
+
+
+
+    /**
+     * Renvoie un tableau avec un ingrédient au hasard dépilé du tableau fourni en paramètre
+     * @param array $ingredients
+     * @return array
+     */
+    public function selectOneIngredient(array $ingredients): array
+    {
+        $index = array_rand($ingredients, 1);
+        $ingredient = $ingredients[$index];
+        array_splice($ingredients, $index,1);
+        return [$ingredient, $ingredients];
+    }
+
 }
