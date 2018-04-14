@@ -52,8 +52,6 @@ class CocktailController extends Controller
             $string = file_get_contents("../public/api/ingredient.json");
             $ingredients = json_decode($string, true);
 
-            $this->selectOneIngredient($ingredients);
-
             $session->set('cocktails', $cocktails);
             $session->set('ingredients', $ingredients);
 
@@ -62,23 +60,19 @@ class CocktailController extends Controller
             $chatMessages[] = "Je vais vous proposer un cocktail.";
 
             $array = $this->selectOneIngredient($ingredients);
-            $ingredientSelected = $array[0];
-            $session->set('ingredientSelected', $ingredientSelected);
-            $ingredients = $array[1];
-            $session->set('ingredients', $ingredients);
-            $chatMessages[] = "L'ingrédient suivant vous convient-il ?";
-            $chatMessages[] = $ingredientSelected;
+            if (count($array) == 0) {
+                $chatMessages[] = "Nous n'avons plus rien à vous proposer.";
+            } else {
+                $ingredientSelected = $array[0];
+                $session->set('ingredientSelected', $ingredientSelected);
+                $ingredients = $array[1];
+                $session->set('ingredients', $ingredients);
+                $chatMessages[] = "L'ingrédient suivant vous convient-il ?";
+                $chatMessages[] = $ingredientSelected;
+            }
 
             $session->set('chatMessages', $chatMessages);
         }
-
-
-
-
-
-
-
-
 
         $form = $this->createForm(BotType::class);
         $form->handleRequest($request);
@@ -132,7 +126,7 @@ class CocktailController extends Controller
     public function selectOneIngredient(array $ingredients): array
     {
         if (count($ingredients) < 1) {
-            throw new LogicException('Il ne reste plus d\'élément dans le tableau.');
+            return [];
         }
         $index = array_rand($ingredients, 1);
         $ingredient = $ingredients[$index];
@@ -218,22 +212,33 @@ class CocktailController extends Controller
         $userMessages[] = "Non";
 
         $array = $this->selectOneIngredient($session->get('ingredients'));
-        $ingredientSelected = $array[0];
-        $session->set('ingredientSelected', $ingredientSelected);
-        $ingredients = $array[1];
-        $session->set('ingredients', $ingredients);
-
-        while (!$this->testIngredientInCocktails($ingredientSelected, $session->get('cocktails'))) {
-            $results = $this->selectOneIngredient($session->get('ingredients'));
-            $ingredientSelected = $results[0];
+        if ($array == []) {
+            $chatMessages[] = "Nous n'avons plus d'ingrédients à vous proposer.";
+        } else {
+            $ingredientSelected = $array[0];
             $session->set('ingredientSelected', $ingredientSelected);
-            $session->set('ingredients', $results[1]);
+            $ingredients = $array[1];
+            $session->set('ingredients', $ingredients);
+
+            while (!$this->testIngredientInCocktails($ingredientSelected, $session->get('cocktails'))) {
+                $results = $this->selectOneIngredient($session->get('ingredients'));
+                if ($results == []) {
+                    $chatMessages[] = "Nous n'avons plus d'ingrédients à vous proposer.";
+                    $session->set('chatMessages', $chatMessages);
+                    return $session;
+                } else {
+                    $ingredientSelected = $results[0];
+                    $session->set('ingredientSelected', $ingredientSelected);
+                    $session->set('ingredients', $results[1]);
+                }
+
+            }
+            $session->set('ingredientSelected', $ingredientSelected);
+
+
+            $chatMessages[] = "L'ingrédient suivant vous convient-il ?";
+            $chatMessages[] = $ingredientSelected;
         }
-        $session->set('ingredientSelected', $ingredientSelected);
-
-
-        $chatMessages[] = "L'ingrédient suivant vous convient-il ?";
-        $chatMessages[] = $ingredientSelected;
 
         $session->set('chatMessages', $chatMessages);
         $session->set('userMessages', $userMessages);
