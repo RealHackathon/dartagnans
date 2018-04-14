@@ -94,7 +94,7 @@ class CocktailController extends Controller
             'cocktails' => $cocktails,
             'ingredients' => $ingredients,
             'chatMessages' => $session->get('chatMessages'),
-            'userMessages' => $session->get('$userMessages'),
+            'userMessages' => $session->get('userMessages'),
             'form' => $form->createView()
         ]);
     }
@@ -173,11 +173,9 @@ class CocktailController extends Controller
 
     public function clicYes($session)
     {
-        dump($session);
 
         $userMessages[] = "Oui";
         $cocktails = $session->get('cocktails');
-        dump($cocktails);
         $cocktails = $this->filterCocktailsByIngredient($session->get('ingredientSelected'), $cocktails);
         $session->set('cocktails', $cocktails);
 
