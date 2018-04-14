@@ -8,17 +8,17 @@
                     <img class="card-img-top" src="{{ asset('images/logo.svg') }}" id="logo" alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Drinky Bot</h4>
+                    <h4 class="card-title text-right mb-5">Drinky Bot</h4>
                     <p class="card-text">
                         <div id="chatMessages">
                             {% for userMessage in userMessages %}
                                 <div class="alert alert-warning text-right">
-                                    <p class="d-flex my-auto">{{ userMessage|capitalize }}</p>
+                                    <p class="my-auto">{{ userMessage|capitalize }}</p>
                                 </div>
                             {% endfor %}
                             {% for chatMessage in chatMessages %}
                                 <div class="alert alert-primary">
-                                    <p class="d-flex my-auto">{{ chatMessage|capitalize }}</p>
+                                    <p class="my-auto">{{ chatMessage|capitalize }}</p>
                                 </div>
                             {% endfor %}
                         </div>
