@@ -1,15 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Hello !{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <section class="container">
+        <div class="row">
+            <div id="chat" class="col-12 card mt-5">
+                <img class="card-img-top" src="{{ asset('images/logo.svg') }}" id="logo" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Drinky Bot</h4>
+                    <p class="card-text">
+                        Le bot te parle
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <div class="form-inline d-flex justify-content-around ">
+                        {{ form_start(form) }}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>src/Controller/CocktailController.php</code></li>
-        <li>Your template at <code>templates/cocktail/index.html.twig</code></li>
-    </ul>
-</div>
+                        <div class="form-group">
+
+                            {{ form_widget(form.yes) }}
+                            {{ form_widget(form.no) }}<br />
+
+                        </div>
+                        <div class="form-group" hidden>
+                            <label for="client_entry">Votre Reponse</label><br />
+                            {{ form_widget(form.client_entry) }}
+                        </div>
+                        {{ form_end(form) }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
 {% endblock %}

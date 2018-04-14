@@ -9,11 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Cocktail
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
     private $id;
 
     /**
@@ -57,6 +52,12 @@ class Cocktail
         return $this->id;
     }
 
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+
     public function getName(): ?string
     {
         return $this->name;
@@ -93,12 +94,12 @@ class Cocktail
         return $this;
     }
 
-    public function getForPeople(): ?array
+    public function getForPeople(): ?int
     {
         return $this->forPeople;
     }
 
-    public function setForPeople(?array $forPeople): self
+    public function setForPeople(?int $forPeople): self
     {
         $this->forPeople = $forPeople;
 
@@ -139,6 +140,19 @@ class Cocktail
         $this->units = $units;
 
         return $this;
+    }
+
+    public function __construct(array $datas)
+    {
+        $this->hydrate($datas);
+    }
+
+    public function hydrate(array $datas)
+    {
+        foreach ($datas as $data => $value) {
+            $method = 'set' . ucfirst($data);
+            $this->$method($value);
+        }
     }
 
 }
