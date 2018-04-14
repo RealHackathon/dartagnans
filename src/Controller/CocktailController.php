@@ -27,6 +27,8 @@ class CocktailController extends Controller
             $string = file_get_contents("../public/api/ingredient.json");
             $ingredients = json_decode($string, true);
 
+            $this->selectOneIngredient($ingredients); die();
+
             $session->set('coktails', $cocktails);
             $session->set('ingredients', $ingredients);
 
@@ -65,13 +67,26 @@ class CocktailController extends Controller
         ]);
     }
 
-    public function selectOne(int $id, array $coktails): Cocktail
+    public function selectOneCocktail(int $id, array $coktails): Cocktail
     {
         foreach ($coktails as $coktail) {
             if ($coktail->getId() == $id) {
                 return $coktail;
             }
         }
+    }
+
+    /**
+     * Renvoie un tableau avec un ingrédient au hasard dépilé du tableau fourni en paramètre
+     * @param array $ingredients
+     * @return array
+     */
+    public function selectOneIngredient(array $ingredients): array
+    {
+        $index = array_rand($ingredients, 1);
+        $ingredient = $ingredients[$index];
+        array_splice($ingredients, $index,1);
+        return [$ingredient, $ingredients];
     }
 
 }
