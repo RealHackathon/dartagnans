@@ -3,17 +3,21 @@ body {
     background-color: #f5f5f5;
 }
 
-h4 {
-    font-family: 'Comfortaa', cursive;
+h2, h4 {
+    font-family: 'Capriola', sans-serif;
 }
 
-#chat {
-    height: 90vh;
+h2 {
+    color: #9ecb83;
 }
 
-#logo {
-    min-width: 200px;
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
+a:hover {
+    color: inherit;
 }
 
 .card-footer {
@@ -24,10 +28,29 @@ h4 {
     box-shadow: 0px 1px 2px 0px #9b9b9b;
 }
 
-.alert {
-    box-shadow: 0px 1px 2px 0px #9b9b9b;
+.bulle {
+    margin: 30px 0 30px 0;
+    padding: 15px;
+    border: 2px solid #ffcc19;
+}
+
+.bulle-user {
+    border: 2px solid #9ecb83;
 }
 
 .btn {
     width: 200px;
+    background-color: #e5e5e5;
+    text-transform: uppercase;
+    border-radius: unset;
+}
+
+.card-header {
+    box-shadow: 0px 2px 1px 0px #9b9b9b;
+    background-color: #fff;
+}
+
+.card-footer {
+    border: unset;
+    height: 150px;
 }

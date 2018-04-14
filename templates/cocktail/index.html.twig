@@ -1,72 +1,66 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section class="container-fluid">
-        <div class="row">
-            <div id="chat" class="col-11 mx-auto card mt-5">
-                <div class="row">
-                    <img class="mr-auto mt-1" src="{{ asset('images/logo.svg') }}" id="logo" alt="Card image cap">
+<section class="container mb-5">
+    <div class="row">
+        <div id="chat" class="col-11 mx-auto card mt-5">
+            <div class="row card-header">
+                <div class="col-4 d-flex align-content-center">
+                    <img class="mr-auto img-fluid" src="{{ asset('images/logo.svg') }}" id="logo" alt="Card image cap">
                 </div>
-                <div class="card-body">
-                    <h4 class="card-title text-right mb-5">Drinky Bot</h4>
-                    <p class="card-text">
-                        <div id="chatMessages">
-                            {% for userMessage in userMessages %}
-                                <div class="col-7 ml-auto alert alert-warning text-right">
-                                    <p class="my-auto">{{ userMessage|capitalize }}</p>
-                                </div>
-                            {% endfor %}
-                            {% for chatMessage in chatMessages %}
-                                <div class="col-7 alert alert-primary">
-                                    <p class="my-auto">{{ chatMessage|capitalize }}</p>
-                                </div>
-                            {% endfor %}
-                            {% if lastCocktail is not null %}
-
-                                <div class="alert alert-primary container-fluid">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <img src="{{ lastCocktail.thumbnail }}">
-                                        </div>
-                                        <div class="col-9">
-                                            <h4>Ingrédients</h4>
-                                            <ul>
-                                                {% for ingredient in lastCocktail.ingredients %}
-                                                    <li>
-                                                        {{ ingredient }} {{ lastCocktail.measures[loop.index0] }} {{ lastCocktail.units[loop.index0] }}
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endif %}
-                        </div>
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <div class="d-flex justify-content-around ">
-                        {{ form_start(form) }}
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-6">{{ form_widget(form.yes) }}</div>
-                                    <div class="col-6">{{ form_widget(form.no) }}</div>
-                                </div>
-
-                            </div>
-                            <div class="form-group" hidden>
-                                <label for="client_entry">Votre Reponse</label><br />
-                                {{ form_widget(form.client_entry) }}
-                            </div>
-                        {{ form_end(form) }}
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <button class="btn btn-warning" onclick="document.location.href='/reset'">Reset</button>
-                    </div>
+                <div class="col-8 d-flex my-auto">
+                    <h2>Un verre c'est bien, Drinky c'est mieux !</h2>
                 </div>
             </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <div id="chatMessages">
+                        {% for userMessage in userMessages %}
+                            <div class="bulle bulle-user col-6 ml-auto text-right">
+                                <p class="my-auto pr-3">{{ userMessage|capitalize }}</p>
+                            </div>
+                        {% endfor %}
+                        {% for chatMessage in chatMessages %}
+                            <div class="bulle bulle-chat col-6">
+                                <p class="my-auto pl-3">{{ chatMessage|capitalize }}</p>
+                            </div>
+                        {% endfor %}
+                        {% if lastCocktail is not null %}
+                            <div class="container mt-5">
+                                <div class="row mx-auto">
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <img src="{{ lastCocktail.thumbnail }}">
+                                    </div>
+                                    <div class="col-6 pt-4">
+                                        <h4>Ingrédients</h4>
+                                        <ul>
+                                            {% for ingredient in lastCocktail.ingredients %}
+                                                <li>
+                                                    {{ ingredient }} {{ lastCocktail.measures[loop.index0] }} {{ lastCocktail.units[loop.index0] }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </p>
+            </div>
+            <div class="d-flex justify-content-around card-footer my-auto">
+                {{ form_start(form) }}
+                    <span class="mr-5">{{ form_widget(form.yes) }}</span>
+                    <span class="mr-5">{{ form_widget(form.no) }}</span>
+                    <div class="form-group" hidden>
+                        <label for="client_entry">Votre Reponse</label><br />
+                        {{ form_widget(form.client_entry) }}
+                    </div>
+                    <a class="btn" href="{{ asset('/reset') }}">Reset</a>
+                {{ form_end(form) }}
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
 
 {% block javascripts %}
