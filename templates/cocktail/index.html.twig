@@ -1,26 +1,46 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section class="container">
+    <section class="container-fluid">
         <div class="row">
-            <div id="chat" class="col-12 card mt-5">
+            <div id="chat" class="col-11 mx-auto card mt-5">
                 <div class="row">
-                    <img class="card-img-top" src="{{ asset('images/logo.svg') }}" id="logo" alt="Card image cap">
+                    <img class="mr-auto mt-1" src="{{ asset('images/logo.svg') }}" id="logo" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h4 class="card-title text-right mb-5">Drinky Bot</h4>
                     <p class="card-text">
                         <div id="chatMessages">
                             {% for userMessage in userMessages %}
-                                <div class="alert alert-warning text-right">
+                                <div class="col-7 ml-auto alert alert-warning text-right">
                                     <p class="my-auto">{{ userMessage|capitalize }}</p>
                                 </div>
                             {% endfor %}
                             {% for chatMessage in chatMessages %}
-                                <div class="alert alert-primary">
+                                <div class="col-7 alert alert-primary">
                                     <p class="my-auto">{{ chatMessage|capitalize }}</p>
                                 </div>
                             {% endfor %}
+                            {% if lastCocktail is not null %}
+
+                                <div class="alert alert-primary container-fluid">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="{{ lastCocktail.thumbnail }}">
+                                        </div>
+                                        <div class="col-9">
+                                            <h4>Ingrédients</h4>
+                                            <ul>
+                                                {% for ingredient in lastCocktail.ingredients %}
+                                                    <li>
+                                                        {{ ingredient }} {{ lastCocktail.measures[loop.index0] }} {{ lastCocktail.units[loop.index0] }}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
                         </div>
                     </p>
                 </div>
@@ -28,8 +48,11 @@
                     <div class="d-flex justify-content-around ">
                         {{ form_start(form) }}
                             <div class="form-group">
-                                {{ form_widget(form.yes) }}
-                                {{ form_widget(form.no) }}
+                                <div class="row">
+                                    <div class="col-6">{{ form_widget(form.yes) }}</div>
+                                    <div class="col-6">{{ form_widget(form.no) }}</div>
+                                </div>
+
                             </div>
                             <div class="form-group" hidden>
                                 <label for="client_entry">Votre Reponse</label><br />

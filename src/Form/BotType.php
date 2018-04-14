@@ -15,11 +15,11 @@ class BotType extends AbstractType
     {
         $builder
             ->add('yes',SubmitType::class, array(
-                'attr' => array('value'=> 'yes', 'class'=>'btn btn-success')
+                'attr' => array('value'=> 'yes', 'class'=>'btn btn-success mx-2 btn-block')
             ))
 
             ->add('no', SubmitType::class , array(
-                'attr'=> array('value'=> 'no', 'class'=>'btn btn-danger')
+                'attr'=> array('value'=> 'no', 'class'=>'btn btn-danger mx-2 btn-block')
             ))
 
             ->add('client_entry', TextType::class,

@@ -89,7 +89,8 @@ class CocktailController extends Controller
             'ingredients' => $ingredients,
             'chatMessages' => $session->get('chatMessages'),
             'userMessages' => $session->get('userMessages'),
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'lastCocktail' => $session->get('lastCocktail')
         ]);
     }
 
@@ -178,6 +179,7 @@ class CocktailController extends Controller
         } else if (count($session->get('cocktails')) == 1) {
 
             $lastCocktail = array_shift($cocktails);
+            $session->set('lastCocktail', $lastCocktail);
             $chatMessages[] = 'Je vous propose le cocktail :';
             $chatMessages[] = $lastCocktail->getName();
         } else {
